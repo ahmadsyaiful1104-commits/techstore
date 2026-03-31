@@ -37,25 +37,9 @@ function updateCartUI() {
 }
 
 function processCheckout() {
-    // ... (kode Anda untuk mengambil data keranjang dan total harga) ...
-
-    let textPesan = `Halo Admin TechStore! 👋✨%0A%0A`;
-    textPesan += `Saya baru saja memilih beberapa gadget dari website TechStore dan ingin melanjutkan proses pemesanan. Berikut adalah rincian produk yang ada di keranjang belanja saya:%0A%0A`;
-    textPesan += `🛒 *Detail Pesanan:*%0A`;
-    
-    // ... (Looping/perulangan untuk memasukkan daftar barang dari keranjang) ...
-    // textPesan += `- ${namaProduk} - Rp ${hargaProduk}%0A`;
-
-    textPesan += `%0A💰 *Total Estimasi:* *Rp ${totalHarga}*%0A%0A`;
-    textPesan += `Apakah semua produk di atas ready stock kak? Jika iya, mohon dibantu untuk informasi metode pembayaran dan estimasi ongkos kirimnya ya.%0A%0A`;
-    textPesan += `Terima kasih banyak, saya tunggu konfirmasinya! 🙏😊`;
-
-    // Menggabungkan pesan dengan nomor WA
-    let waNumber = "6285293395795"; 
-    let waURL = `https://wa.me/${waNumber}?text=${textPesan}`;
-
-    // Membuka tab WhatsApp baru
-    window.open(waURL, "_blank");
+    if (cart.length === 0) return alert("Keranjang kosong!");
+    let text = "Halo TechStore, saya ingin pesan:\n" + cart.map(i => `- ${i.name}`).join("\n");
+    window.open("https://wa.me/628123456789?text=" + encodeURIComponent(text));
 }
 }
 function toggleMenu() {
