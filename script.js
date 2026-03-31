@@ -52,10 +52,11 @@ function processCheckout() {
 
     // Menggabungkan pesan dengan nomor WA
     let waNumber = "6285293395795"; 
-    let waURL = `https://wa.me/6285293395795${waNumber}?text=${textPesan}`;
+    let waURL = `https://wa.me/${waNumber}?text=${textPesan}`;
 
     // Membuka tab WhatsApp baru
     window.open(waURL, "_blank");
+}
 }
 function toggleMenu() {
     const nav = document.getElementById('nav-menu');
