@@ -1,4 +1,4 @@
-
+alert("Halo! File Script.js sudah berhasil tersambung!");
 let total = 0;
 
 function toggleCart() {
