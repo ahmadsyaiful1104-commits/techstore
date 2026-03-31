@@ -8,27 +8,30 @@
     <link rel="icon" type="image/png" href="logo-techstore.png">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="top-bar">
-        <div class="menu-toggle" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
+   <header>
+        <div class="top-bar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="logo">
-    <a href="index.html">
-        <img src="logo-techstore.png" alt="TechStore Logo" style="height: 40px; width: auto; vertical-align: middle;">
-        <span style="margin-left: 10px;">TechStore</span>
-    </a>
-</div>
-            <nav id="nav-menu">
-        <ul>
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="katalog.html">Produk</a></li>
-            <li><a href="tentang.html">Tentang Kami</a></li>
-            <li><a href="kontak.html">Kontak</a></li>
+                <a href="index.html">
+                    <img src="logo-techstore.png" alt="TechStore Logo" style="height: 40px; width: auto; vertical-align: middle;">
+                    <span style="margin-left: 10px;">TechStore</span>
+                </a>
+            </div>
+            <div class="user-actions">
+                <div class="cart-icon" onclick="toggleCart()" style="cursor:pointer">🛒 <span id="cart-count">0</span></div>
+            </div>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
         </nav>
     </header>
 
