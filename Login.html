@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akun - TechStore</title>
+    <link rel="icon" type="image/png" href="logo-techstore.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="logo">TechStore</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="katalog.html">Produk</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box">
+            <h2 id="auth-title">Masuk Ke Akun</h2>
+            <form id="auth-form">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="contoh@email.com" required>
+                </div>
+                <div class="input-group">
+                    <label>Kata Sandi</label>
+                    <input type="password" placeholder="******" required>
+                </div>
+                <button type="submit" class="auth-btn">MASUK</button>
+            </form>
+            <p class="auth-footer">
+                Belum punya akun? <a href="#" onclick="toggleAuth()">Daftar di sini</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        let isLogin = true;
+        function toggleAuth() {
+            const title = document.getElementById('auth-title');
+            const btn = document.querySelector('.auth-btn');
+            const footer = document.querySelector('.auth-footer');
+            
+            isLogin = !isLogin;
+            
+            if(!isLogin) {
+                title.innerText = "Daftar Akun Baru";
+                btn.innerText = "DAFTAR";
+                footer.innerHTML = 'Sudah punya akun? <a href="#" onclick="toggleAuth()">Login di sini</a>';
+            } else {
+                title.innerText = "Masuk Ke Akun";
+                btn.innerText = "MASUK";
+                footer.innerHTML = 'Belum punya akun? <a href="#" onclick="toggleAuth()">Daftar di sini</a>';
+            }
+        }
+    </script>
+</body>
+</html>
