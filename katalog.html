@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Produk - TechStore</title>
+    <link rel="icon" type="image/png" href="logo-techstore.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="cart-modal">
+        <h2 style="color: var(--neon-blue); margin-bottom: 20px;">🛒 Keranjang Belanja</h2>
+        <div id="cart-items-list"><p style="color: var(--text-dim);">Keranjang masih kosong...</p></div>
+        <hr style="margin: 20px 0; border: 0.5px solid #333;">
+        <div style="display: flex; justify-content: space-between; font-weight: bold;">
+            <span>Total:</span> <span id="cart-total">Rp 0</span>
+        </div>
+        <button style="width: 100%; margin-top: 20px;" onclick="processCheckout()">Checkout Sekarang</button>
+        <button style="width: 100%; margin-top: 10px; border-color: #ff4d4d; color: #ff4d4d;" onclick="toggleCart()">Tutup</button>
+    </div>
+
+    <header>
+        <div class="top-bar">
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="logo">TechStore</div>
+            <div class="user-actions">
+                <div class="cart-icon" onclick="toggleCart()" style="cursor:pointer">🛒 <span id="cart-count">0</span></div>
+            </div>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title" style="text-align:center; margin: 30px 0; color: var(--neon-blue);">Katalog Gadget Terkini</h1>
+        
+        <div class="product-grid">
+           <div class="product-card">
+    <img src="ip16 Pro Max.jpg" alt="iPhone">
+    <h3>iPhone 16 Pro Max</h3>
+    <p class="price">Mulai Rp 25.250.000</p>
+    <button onclick="openVariantModal('iPhone 16 Pro Max')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="iP 16 Pro.jpg" alt="iPhone">
+    <h3>iPhone 16 Pro </h3>
+    <p class="price">Mulai Rp 17.750.000</p>
+    <button onclick="openVariantModal('iPhone 16 Pro ')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 16 plus.jpg" alt="iPhone">
+    <h3>iPhone 16 Plus</h3>
+    <p class="price">Mulai Rp 17.250.000</p>
+    <button onclick="openVariantModal('iPhone 16 Plus')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 16.jpg" alt="iPhone">
+    <h3>iPhone 16 </h3>
+    <p class="price">Mulai Rp 15.000.000</p>
+    <button onclick="openVariantModal('iPhone 16 ')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 15 pro max.jpg" alt="iPhone">
+    <h3>iPhone 15 Pro Max</h3>
+    <p class="price">Mulai Rp 16.500.000</p>
+    <button onclick="openVariantModal('iPhone 15 Pro Max')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 15 pro.jpg" alt="iPhone">
+    <h3>iPhone 15 Pro </h3>
+    <p class="price">Mulai Rp 14.250.000</p>
+    <button onclick="openVariantModal('iPhone 15 Pro ')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 15 plus.jpg" alt="iPhone">
+    <h3>iPhone 15 Plus</h3>
+    <p class="price">Mulai Rp 13.500.000</p>
+    <button onclick="openVariantModal('iPhone 15 Plus')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 15.jpg" alt="iPhone">
+    <h3>iPhone 15</h3>
+    <p class="price">Mulai Rp 12.550.000</p>
+    <button onclick="openVariantModal('iPhone 15')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 14 pro max.jpg" alt="iPhone">
+    <h3>iPhone 14 Pro Max</h3>
+    <p class="price">Mulai Rp 13.500.000</p>
+    <button onclick="openVariantModal('iPhone 14 Pro Max')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 14 pro.jpg" alt="iPhone">
+    <h3>iPhone 14 Pro </h3>
+    <p class="price">Mulai Rp 11.450.000</p>
+    <button onclick="openVariantModal('iPhone 14 Pro ')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 14 plus.jpg" alt="iPhone">
+    <h3>iPhone 14 Plus</h3>
+    <p class="price">Mulai Rp 9.750.000</p>
+    <button onclick="openVariantModal('iPhone 14 Plus')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 14.jpg" alt="iPhone">
+    <h3>iPhone 14</h3>
+    <p class="price">Mulai Rp 8.750.000</p>
+    <button onclick="openVariantModal('iPhone 14')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 13.jpg" alt="iPhone">
+    <h3>iPhone 13</h3>
+    <p class="price">Mulai Rp 8.500.000</p>
+    <button onclick="openVariantModal('iPhone 13')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 12.jpg" alt="iPhone">
+    <h3>iPhone 12</h3>
+    <p class="price">Mulai Rp 6.500.000</p>
+    <button onclick="openVariantModal('iPhone 12')">Tambah ke Keranjang</button>
+</div>
+ <div class="product-card">
+    <img src="ip 11.jpg" alt="iPhone">
+    <h3>iPhone 11</h3>
+    <p class="price">Mulai Rp 4.500.000</p>
+    <button onclick="openVariantModal('iPhone 11')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="apple mac book air m3.jpg" alt="Laptop">
+    <h3>MacBook Air M3</h3>
+    <p class="price">Mulai Rp 18.500.000</p>
+    <button onclick="openVariantModal('MacBook Air M3')">Tambah ke Keranjang</button>
+</div>
+
+<div class="product-card">
+    <img src="mac book air m2.jpg" alt="Laptop">
+    <h3>MacBook Air M2</h3>
+    <p class="price">Mulai Rp 16.500.000</p>
+    <button onclick="openVariantModal('MacBook Air M2')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="Lenovo LOQ 15IAX9I.jpg" alt="Laptop">
+    <h3>Lenovo LOQ 15</h3>
+    <p class="price">Mulai Rp 14.500.000</p>
+    <button onclick="openVariantModal('Lenovo LOQ 15')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="acer swift go fsg14.jpg" alt="Laptop">
+    <h3>Acer Swift Go Fsg14</h3>
+    <p class="price">Mulai Rp 12.500.000</p>
+    <button onclick="openVariantModal('Acer Swift Go Fsg14')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="MSI Modern  AI C11M.jpg" alt="Laptop">
+    <h3>MSI Modern  AI C11M</h3>
+    <p class="price">Mulai Rp 10.500.000</p>
+    <button onclick="openVariantModal('MSI Modern  AI C11M')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="Dell SPX 13.jpg" alt="Laptop">
+    <h3>Dell SPX 13</h3>
+    <p class="price">Mulai Rp 15.500.000</p>
+    <button onclick="openVariantModal('Dell SPX 13')">Tambah ke Keranjang</button>
+</div>
+
+<div class="product-card">
+    <img src="lenovo think.jpg" alt="PC">
+    <h3>Lenovo ThinkCenter</h3>
+    <p class="price">Mulai Rp 17.000.000</p>
+    <button onclick="openVariantModal('Lenovo ThinkCenter')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="pc editing ram 16.jpg" alt="PC">
+    <h3>pc editing ram 16</h3>
+    <p class="price">Mulai Rp 8.000.000</p>
+    <button onclick="openVariantModal('pc editing ram 16')">Tambah ke Keranjang</button>
+</div>
+<div class="product-card">
+    <img src="paket pc gaming lengkap core i7.jpg" alt="PC">
+    <h3>paket pc gaming lengkap core i7</h3>
+    <p class="price">Mulai Rp 10.000.000</p>
+    <button onclick="openVariantModal('paket pc gaming lengkap core i7')">Tambah ke Keranjang</button>
+</div>
+ 
+            </div>
+
+    <script src="script.js"></script>
+    <div id="variant-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.8);">
+    <div style="background:#1a1a1a; margin:10% auto; padding:25px; width:90%; max-width:400px; border:1px solid var(--neon-blue); border-radius:15px; color:white;">
+        <h2 id="modal-product-name" style="color:var(--neon-blue);">Pilih Varian</h2>
+        
+        <div style="margin:20px 0;">
+            <label style="display:block; margin-bottom:5px; color:#888;">Pilih RAM:</label>
+            <select id="modal-ram-select" onchange="updateModalPrice()" style="width:100%; padding:10px; background:#000; color:white; border:1px solid #333;"></select>
+            
+            <label style="display:block; margin-top:15px; margin-bottom:5px; color:#888;">Pilih Warna:</label>
+            <select id="modal-color-select" onchange="updateModalPrice()" style="width:100%; padding:10px; background:#000; color:white; border:1px solid #333;"></select>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span id="modal-price-display" style="font-size:1.2rem; font-weight:bold; color:#00ff88;">Rp 0</span>
+            <button onclick="confirmAddToCart()" style="width:auto; padding:10px 20px;">Konfirmasi</button>
+        </div>
+        <button onclick="closeVariantModal()" style="width:100%; margin-top:15px; background:none; border:none; color:#ff4d4d; cursor:pointer;">Batal</button>
+    </div>
+</div>
+</body>
+</html>
