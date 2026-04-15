@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Solusi Gadget Premium</title>
+    <link rel="icon" type="image/png" href="logo web.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="cart-modal">
+        <div class="modal-header">
+            <h2 class="section-title" style="margin-top: 0; font-size: 1.5rem;">🛒 Keranjang</h2>
+        </div>
+        
+        <div id="cart-items-list" class="cart-items-container">
+            <p class="empty-msg">Keranjang Anda masih kosong...</p>
+        </div>
+
+        <div class="cart-summary">
+            <div class="total-row">
+                <span>Total Estimasi:</span>
+                <span id="cart-total" class="price">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="processCheckout()">Checkout Sekarang</button>
+            <button class="btn-close" onclick="toggleCart()" style="border-color: var(--text-dim); color: var(--text-dim); margin-top: 10px;">Kembali Belanja</button>
+        </div>
+    </div>
+
+    <header>
+    <div class="top-bar">
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo">
+    <a href="index.html">
+        <img src="logo-techstore.png" alt="TechStore Logo" style="height: 40px; width: auto; vertical-align: middle;">
+        <span style="margin-left: 10px;">TechStore</span>
+    </a>
+</div>
+
+        <div class="search-container">
+   <input type="text" id="search-input" placeholder="Cari produk..." 
+       onkeyup="searchProducts()" 
+       onkeypress="handleSearch(event)">
+    <button type="button">🔍</button>
+</div>
+
+        <div class="user-actions">
+            <a href="Login.html" class="user-icon">👤</a>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </div>
+
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="katalog.html">Produk</a></li>
+            <li><a href="tentang.html">Tentang Kami</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="promo-neon-box">
+    <div class="marquee-container">
+       <div class="marquee-content">
+        <span>🔥 DISKON AKHIR TAHUN UP TO 20% UNTUK SEMUA IPHONE!</span>
+        <span>🚀 GRATIS ONGKIR SELURUH INDONESIA TANPA MINIMUM BELANJA</span>
+        <span>💎 GARANSI RESMI IBOX 1 TAHUN</span>
+        <span>⚡ PROSES CEPAT & PACKING KAYU AMAN</span>
+        <span>🔥 DISKON AKHIR TAHUN UP TO 20% UNTUK SEMUA IPHONE!</span>
+        <span>🚀 GRATIS ONGKIR SELURUH INDONESIA TANPA MINIMUM BELANJA</span>
+    </div>
+    </div>
+</div>
+
+    <main class="container">
+    <h2 class="section-title">🔥 Produk Terlaris</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="badge-premium">Pilihan Ahli</div>
+            <img src="ip 15 pro.jpg" alt="iPhone 15 Pro">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(120)</span></div>
+            <h3>iPhone 15 Pro - 256GB</h3>
+            <p class="price">Rp 18.000.000</p>
+            <div class="product-stats">
+                <span>📦 Terjual 500+</span>
+                <span>📍 Jakarta</span>
+            </div>
+            <button onclick="addToCart('iPhone 15 Pro', 18000000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <div class="badge-promo">Diskon 5%</div>
+            <img src="mac book air m2.jpg" alt="MacBook">
+            <div class="rating">⭐⭐⭐⭐⭐ <span>(85)</span></div>
+            <h3>MacBook Air M2 - Space Gray</h3>
+            <p class="price">Rp 15.500.000</p>
+            <div class="product-stats">
+                <span>📦 Terjual 1.2K+</span>
+                <span>📍 Surabaya</span>
+            </div>
+            <button onclick="addToCart('MacBook Air M2', 15500000)">Tambah ke Keranjang</button>
+        </div>
+
+        <div class="product-card">
+            <img src="lenovo think.jpg" alt="Komputer">
+            <div class="rating">⭐⭐⭐⭐☆ <span>(40)</span></div>
+            <h3>Lenovo ThinkCenter Neo 50t</h3>
+            <p class="price">Rp 17.000.000</p>
+            <div class="product-stats">
+                <span>📦 Terjual 200+</span>
+                <span>📍 Bandung</span>
+            </div>
+            <button onclick="addToCart('Lenovo ThinkCenter Neo', 17000000)">Tambah ke Keranjang</button>
+        </div>
+    </div>
+</main>
+
+    <footer>
+    <div class="footer-container">
+     <div class="footer-box" style="text-align: center; margin-bottom: 25px;">
+    <div class="footer-icon" style="color: var(--neon-blue); text-shadow: 0 0 15px var(--neon-blue); font-size: 2rem; margin-bottom: 15px;">
+        <i class="fas fa-headset"></i>
+    </div>
+    
+    <h3 style="margin-bottom: 25px; letter-spacing: 2px;">HUBUNGI KAMI</h3>
+    
+    <div class="contact-links-container" style="display: flex; flex-direction: row; gap: 25px; justify-content: center; align-items: center; flex-wrap: wrap;">
+        
+        <a href="mailto:support@techstore.com" style="text-decoration: none; color: #ffffff; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fas fa-envelope" style="font-size: 1.2rem; color: #00d4ff; filter: drop-shadow(0 0 5px rgba(0,212,255,0.5));"></i>
+            <span style="font-size: 0.95rem; font-weight: 600;">Email</span>
+        </a>
+
+        <span style="color: rgba(255,255,255,0.1);">|</span>
+
+        <a href="https://wa.me/6282593395795" target="_blank" style="text-decoration: none; color: #ffffff; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fab fa-whatsapp" style="font-size: 1.3rem; color: #25D366; filter: drop-shadow(0 0 5px rgba(37,211,102,0.5));"></i>
+            <span style="font-size: 0.95rem; font-weight: 600;">WhatsApp</span>
+        </a>
+
+        <span style="color: rgba(255,255,255,0.1);">|</span>
+
+        <a href="#" style="text-decoration: none; color: #ffffff; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fas fa-location-dot" style="font-size: 1.2rem; color: #ff3366; filter: drop-shadow(0 0 5px rgba(255,51,102,0.5));"></i>
+            <span style="font-size: 0.95rem; font-weight: 600;">Lokasi</span>
+        </a>
+
+        <span style="color: rgba(255,255,255,0.1);">|</span>
+
+        <div style="display: flex; align-items: center; gap: 10px; color: #ffffff; background: rgba(0, 212, 255, 0.1); padding: 6px 15px; border-radius: 20px; border: 1px solid rgba(0, 212, 255, 0.4);">
+            <i class="fas fa-clock" style="color: #00d4ff;"></i>
+            <span style="font-size: 0.9rem; font-weight: 700;">09:00 - 21:00</span>
+        </div>
+
+    </div>
+</div>
+</div>
+
+      <div class="footer-box" style="text-align: center; margin-bottom: 25px;">
+     <div class="footer-icon" style="color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue); margin-bottom: 10px;">💳</div>
+    <h3 style="margin-bottom: 20px;">Pembayaran</h3>
+    
+    <div class="payment-methods" style="display: flex; flex-direction: row; gap: 18px; justify-content: center; align-items: center; flex-wrap: wrap;">
+        
+        <div class="pay-item" style="display: flex; align-items: center; gap: 8px; background: rgba(0, 51, 153, 0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid rgba(0, 51, 153, 0.3);">
+            <i class="fas fa-university" style="color: #003399; font-size: 0.9rem;"></i>
+            <span style="color: #003399; font-weight: 800; font-style: italic; font-size: 0.85rem;">BCA</span>
+        </div>
+
+        <div class="pay-item" style="display: flex; align-items: center; gap: 8px; background: rgba(255, 193, 7, 0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid rgba(255, 193, 7, 0.3);">
+            <i class="fas fa-building-columns" style="color: #ffc107; font-size: 0.9rem;"></i>
+            <span style="color: #ffc107; font-weight: 800; font-size: 0.85rem;">mandiri</span>
+        </div>
+
+        <div class="pay-item" style="display: flex; align-items: center; gap: 8px; background: rgba(26, 154, 230, 0.1); padding: 8px 15px; border-radius: 8px; border: 1px solid rgba(26, 154, 230, 0.4);">
+            <i class="fas fa-wallet" style="color: #1a9ae6; font-size: 0.9rem;"></i>
+            <span style="color: #1a9ae6; font-weight: 800; font-size: 0.85rem; letter-spacing: 1px;">DANA</span>
+        </div>
+
+        <div class="pay-item" style="display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.05); padding: 8px 15px; border-radius: 8px; border: 1px solid var(--neon-blue); box-shadow: 0 0 8px rgba(0, 242, 255, 0.2);">
+            <i class="fas fa-qrcode" style="color: var(--neon-blue); font-size: 0.9rem;"></i>
+            <span style="font-weight: 800; font-size: 0.85rem;">
+                <span style="color: #ed2124;">Q</span><span style="color: #2e3192;">R</span><span style="color: #f6941e;">I</span><span style="color: #00a651;">S</span>
+            </span>
+        </div>
+    </div>
+</div>
+</div>
+
+    <div class="footer-box" style="text-align: center; margin-bottom: 0;">
+    <div class="footer-icon" style="color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); margin-bottom: 10px;">🌐</div>
+    <h3 style="margin-bottom: 20px;">Ikuti Kami</h3>
+    
+    <div class="social-links-container" style="display: flex; flex-direction: row; gap: 35px; justify-content: center; flex-wrap: wrap;">
+        
+        <a href="https://instagram.com/TechStore_ID" target="_blank" 
+           style="text-decoration: none; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fab fa-instagram" style="font-size: 1.6rem; color: #E1306C; filter: drop-shadow(0 0 5px rgba(225, 48, 108, 0.6));"></i>
+            <span style="font-size: 1rem; font-weight: 700; color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.3);">Instagram</span>
+        </a>
+
+        <a href="https://tiktok.com/@TechStoreOfficial" target="_blank" 
+           style="text-decoration: none; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fab fa-tiktok" style="font-size: 1.6rem; color: #ffffff; filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));"></i>
+            <span style="font-size: 1rem; font-weight: 700; color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.3);">TikTok</span>
+        </a>
+
+        <a href="https://youtube.com/c/TechStoreTV" target="_blank" 
+           style="text-decoration: none; display: flex; align-items: center; gap: 10px; transition: 0.3s;">
+            <i class="fab fa-youtube" style="font-size: 1.6rem; color: #FF0000; filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.6));"></i>
+            <span style="font-size: 1rem; font-weight: 700; color: #ffffff; text-shadow: 0 0 5px rgba(255,255,255,0.3);">YouTube</span>
+        </a>
+        
+    </div>
+</div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 TechStore. Semua Hak Cipta Dilindungi.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
